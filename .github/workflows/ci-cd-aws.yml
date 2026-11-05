@@ -1,0 +1,27 @@
+name: CI/CD Pipeline - Backend NutriVida
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Dar permisos de ejecucion a mvnw
+        run: chmod +x mvnw
+
+      - name: Ejecutar Tests Automatizados
+        run: ./mvnw test
+
+      - name: Compilar empaquetado JAR
+        run: ./mvnw package -DskipTests
