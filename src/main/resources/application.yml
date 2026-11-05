@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: h2
+  application:
+    name: backend
+
+server:
+  port: 8080
