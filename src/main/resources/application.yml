@@ -6,3 +6,8 @@ spring:
 
 server:
   port: 8080
+
+datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/${DB_NAME:nutrivida_db}
+    username: ${DB_USER:admin}
+    password: ${DB_PASSWORD:secret}
