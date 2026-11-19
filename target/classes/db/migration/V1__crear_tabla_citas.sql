@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS citas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre_paciente VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telefono VARCHAR(30) NOT NULL,
+    fecha_cita VARCHAR(50) NOT NULL,
+    servicio VARCHAR(150) NOT NULL,
+    estado VARCHAR(30) NOT NULL DEFAULT 'PENDIENTE'
+);

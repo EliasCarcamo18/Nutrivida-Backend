@@ -1,0 +1,2 @@
+ALTER TABLE citas
+ADD CONSTRAINT chk_estado_cita CHECK (estado IN ('PENDIENTE', 'FINALIZADA', 'CANCELADA'));
